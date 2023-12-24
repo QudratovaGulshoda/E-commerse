@@ -1,4 +1,5 @@
 from django.db import models
+from authentication.models import User
 from utils.models import BaseModel
 # Create your models here.
 from django.utils.html import format_html
@@ -13,6 +14,9 @@ class Product(BaseModel):
         ('active', 'active'),
         ('noactive', 'no active')
     ), default='noactive')
+
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
