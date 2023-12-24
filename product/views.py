@@ -20,3 +20,5 @@ class ProductDeleteAPIView(generics.DestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializers
 
+class HomePageView(TemplateView):
+    template_name = 'base.html'
