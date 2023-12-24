@@ -8,6 +8,9 @@ from rest_framework import status
 from rest_framework.response import Response
 
 
-class UserView(generics.ListAPIView):
+class UserListAPIView(generics.ListAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializers
+class UserCreateAPIView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializers
