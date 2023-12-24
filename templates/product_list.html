@@ -1,15 +1,1 @@
-{% load static %}
-{% extends "base.html" %}
 
-{% block content %}
-  <h1>Your Products</h1>
-  <ul>
-    {% for product in user_products %}
-      <li>
-        <a href="{% url 'product-detail' product.pk %}">{{ product.name }}</a>
-      </li>
-    {% empty %}
-      <li>No products yet.</li>
-    {% endfor %}
-  </ul>
-{% endblock %}
